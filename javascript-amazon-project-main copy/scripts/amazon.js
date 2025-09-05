@@ -1,7 +1,5 @@
-import{cart} from '../data/cart.js';
 
 let productsHTML = '';
-
 
 products.forEach((product) => {
 productsHTML += `         
@@ -27,7 +25,7 @@ productsHTML += `
             $${(product.priceCents/100).toFixed(2)}
           </div>
 
-          <div class="product-quantity-container">
+          <div class="product-quantity-container js-quantity-selector-${product.id}">
             <select>
               <option selected value="1">1</option>
               <option value="2">2</option>
@@ -93,7 +91,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button, index) => {
   });
 
   document.querySelector('.js-cart-quantity').innerHTML  = cartQuantity;
-
+  
 console.log(cartQuantity);
 console.log(cart);
       })
